@@ -39,6 +39,7 @@ html {
 }
 
 body {
+  font-family: "Rubik", "Arial", sans-serif;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -64,28 +65,30 @@ body {
   outline-offset: 3px;
 }
 
-.header-content {
+.header {
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
-.heading {
+.header__inner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
+.header-logo{
+  margin-right: auto;
+}
 
-.header-service {
+.sitenav-service {
   display: flex;
+  
   margin: 0;
   padding: 0;
 }
 
-.header__link {
+.sitenav__link {
   margin-top: 0;
   list-style: none;
   text-align: center;
-  font-family: Roboto;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -93,13 +96,13 @@ body {
   margin-bottom: 6px;
 }
 
-.header__input {
+.sitenav__input {
   border: none;
   margin: 0;
   padding-bottom: 6px;
   border-bottom: 1px solid #333;
   color: #666;
-  font-family: Roboto;
+  
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -107,11 +110,13 @@ body {
   cursor: pointer; 
 }
 
-.header__link:not(:last-child) {
+.sitenav__link:not(:last-child) {
   margin-right: 35px;
 }
-
-.header__links {
+.sitenav__link:nth-child(4){
+  margin-right: 40px;
+}
+.sitenav__links {
   text-decoration: none;
   color: var(--section-text-small-color);
   transition: color 0.4s ease,
@@ -122,12 +127,12 @@ body {
   border-bottom: 3px solid transparent;
 }
 
-.header__links:hover {
+.sitenav__links:hover {
   color: #EA625C;
   border-bottom: 3px solid black;
 }
 
-.header__links:active {
+.sitenav__links:active {
   opacity: 0.6;
 }
 
@@ -144,42 +149,40 @@ body {
 
 
 
-.header__call {
+.section__call {
   color: var(--header-text-color);
   margin-top: 0;
-  font-family: Roboto;
+
   font-size: 50px;
   font-style: normal;
   font-weight: 700;
   line-height: 120%;
 }
 
-.site__shop--text {
+.section__text {
   display: flex;
   margin-top: 0;
   margin-bottom: 30px;
   width: 450px;
   color: var(--heading-color);
-  font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
 }
-.site__shop--text::before {
+.section__text::before {
   margin-right: 40px;
   content: "";
   border-left: 4px solid #888;
 }
 
-.buy-button {
+.section-button {
   cursor: pointer;
   border: 0;
   background: var(--button);
   padding: 12px 39px;
   color: #FFF;
   text-align: center;
-  font-family: Roboto;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -192,20 +195,20 @@ body {
   border: 2px solid var(--button);
 }
 
-.buy-button:hover {
+.section-button:hover {
   border: 2px solid var(--button);
   background-color: #fff;
   color: var(--button);
 
 }
 
-.buy-button:active {
+.section-button:active {
   opacity: 0.6;
   color: #fff;
   background-color: var(--button);
 }
 
-.header-container {
+.feature {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -213,21 +216,19 @@ body {
 
 }
 
-.list {
+.feature__list{
 
   list-style-type: none;
 }
 
-.list:not(:last-child) {
+.feature__list:not(:last-child) {
   margin-right: 80px;
 }
 
-.header__words {
-  width: 280px;
+.feature__words {
   margin-top: 0;
   margin-bottom: 30px;
   color: var(--section-text-color);
-  font-family: Roboto;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -235,12 +236,11 @@ body {
   text-transform: uppercase;
 }
 
-.header__small--words {
+.feature__small--words {
   width: 280px;
   margin-top: 0;
   margin-bottom: 20px;
   color: var(--section-text-small-color);
-  font-family: Roboto;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -268,7 +268,7 @@ body {
   display: flex;
   align-items: center;
   color: var(--button);
-  font-family: Roboto;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -304,21 +304,33 @@ body {
     width: 380px;
   margin-top: 0;
   color: var(--header-text-color);
-  font-family: Roboto;
   font-size: 50px;
   font-style: normal;
   font-weight: 700;
   line-height: 120%;
 }
+.site__shop--text{
+  display: flex;
+  width: 450px;
+  color: #777;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; 
+margin-bottom: 30px;
+}
 
-
+.site__shop--text::before{
+  margin-right: 40px;
+  content: "";
+ border-left: 3px solid #888;
+}
 .site-shop-buy {
   border: 0;
   margin-top: 0;
   color: #FFF;
   cursor: pointer;
   text-align: center;
-  font-family: Roboto;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -349,7 +361,7 @@ body {
   color: #fff;
 }
 
-.footer-list {
+.footer-inner{
 
   padding-top: 240px;
   padding-bottom: 240px;
@@ -359,37 +371,36 @@ body {
   background-attachment: fixed;
 }
 
-.footer__content {
+.footer__inner--wrapper {
   max-width: 490px;
   margin-left: auto;
 
 }
 
-.footer__inner {
+.footer__inner--text {
   margin-top: 0;
   width: 490px;
   color: #FFF;
-  font-family: Roboto;
+  
   font-size: 50px;
   font-style: normal;
   font-weight: 700;
   line-height: 120%;
 }
 
-.footer__text {
+.footer__inner--small--text {
   display: flex;
   margin-top: 0;
   margin-bottom: 30px;
   width: 450px;
   color: #FFF;
-  font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
 }
 
-.footer__text::before {
+.footer__inner--small--text::before {
   content: "";
   margin-right: 40px;
   width: 3px;
@@ -398,7 +409,7 @@ body {
   background-color: #FFF;
 }
 
-.footer-button {
+.footer-inner-button {
   margin-top: 0;
   border: 0;
   cursor: pointer;
@@ -409,7 +420,6 @@ body {
   background-color: var(--button);
   color: #FFF;
   text-align: center;
-  font-family: Roboto;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -422,14 +432,14 @@ body {
   border: 2px solid var(--button);
 }
 
-.footer-button:hover {
+.footer-inner-button:hover {
   border: 2px solid var(--button);
   background-color: #fff;
   color: var(--button);
 
 }
 
-.footer-button:active {
+.footer-inner-button:active {
   color: #fff;
   background-color: var(--button);
   opacity: 0.6;
